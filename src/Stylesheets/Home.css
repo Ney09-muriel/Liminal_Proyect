@@ -1,0 +1,7 @@
+.home-section {
+  height: 100vh;
+  background-image: url("/public/Home.jpg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

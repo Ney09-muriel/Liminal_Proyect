@@ -1,0 +1,33 @@
+.liminal-navbar {
+  background-color: #000;
+  border-bottom: 1px solid #00ff00;
+  padding: 12px 0;
+}
+
+.liminal-logo {
+  color: #00ff00 !important;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.liminal-link {
+  color: #fff !important;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.liminal-link:hover {
+  color: #00ff00 !important;
+}
+
+.navbar-toggler {
+  border-color: #00ff00;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
