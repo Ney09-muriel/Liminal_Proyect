@@ -1,5 +1,49 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+:root {
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+
+  --color-green-primary: #4caf50;
+  --color-green-bright: #66bb6a;
+  --color-green-muted: #81c784;
+  --color-green-dark: #2e7d32;
+  --color-green-glow: rgba(76, 175, 80, 0.3);
+
+  --color-bg-dark: #060e0a;
+  --color-bg-section: #0d1a0f;
+  --color-bg-card: rgba(5, 5, 5, 0.6);
+
+  --color-text-primary: #e8f5e9;
+  --color-text-secondary: #a5d6a7;
+  --color-text-muted: #81c784;
+  --color-text-dim: #4a6e4c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 #root {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Tipografía base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+p, span, a, li {
+  font-family: var(--font-body);
 }

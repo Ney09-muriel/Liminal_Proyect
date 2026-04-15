@@ -1,34 +1,37 @@
 .liminal-navbar {
-  background-color: #000000bb;
-  border-bottom: 1px solid #4caf50;
-  padding: 12px 0;
-  gap: 4px;
-  border-radius: 10px 10px 10px 10px;
+  background-color: rgba(6, 14, 10, 0.92);
+  border-bottom: 1px solid rgba(76, 175, 80, 0.35);
+  padding: 14px 0;
   margin-top: 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
 }
 
 .liminal-logo {
-  color: #4caf50 !important;
-  font-weight: 900;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #00ff00;
+  font-family: var(--font-display) !important;
+  color: var(--color-green-primary) !important;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  text-shadow: 0 0 12px var(--color-green-glow);
 }
 
 .liminal-link {
-  color: #fff !important;
+  font-family: var(--font-display) !important;
+  color: var(--color-text-secondary) !important;
   letter-spacing: 2px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .liminal-link:hover {
-  color: #4caf50 !important;
+  color: var(--color-green-primary) !important;
+  text-shadow: 0 0 8px var(--color-green-glow);
 }
 
 .navbar-toggler {
-  border-color: #4caf50;
+  border-color: var(--color-green-primary);
 }
 
 .navbar-toggler-icon {

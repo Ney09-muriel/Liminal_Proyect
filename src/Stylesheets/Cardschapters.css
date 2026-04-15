@@ -1,35 +1,41 @@
 .chapter-card {
-  background-color: #0505059c;
-  border: 1px solid #000000;
-  border-radius: 12px;
-  padding: 24px;
-  color: #fff;
+  background-color: var(--color-bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 28px;
+  color: var(--color-text-primary);
   transition: border 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   height: 100%;
 }
 
 .chapter-card:hover {
-  border: 1px solid #4caf50;
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+  border: 1px solid var(--color-green-primary);
+  box-shadow: 0 0 20px var(--color-green-glow);
 }
 
 .chapter-number {
-  color: #4caf50;
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  color: var(--color-green-primary);
+  font-size: 0.7rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .chapter-title {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+  font-family: var(--font-display);
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
 }
 
 .chapter-desc {
-  color: #aaa;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-style: italic;
 }
