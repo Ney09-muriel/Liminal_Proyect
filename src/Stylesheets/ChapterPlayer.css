@@ -266,7 +266,10 @@
 }
 
 .player-vol-slider {
+  appearance: none;
   -webkit-appearance: none;
+  width: 70px;
+
   width: 70px;
   height: 3px;
   background: rgba(56, 142, 60, 0.3);
