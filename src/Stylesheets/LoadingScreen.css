@@ -1,0 +1,209 @@
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--color-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loading-fade-in 0.3s ease forwards;
+}
+
+@keyframes loading-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.loading-screen.hiding {
+  animation: loading-fade-out 0.5s ease forwards;
+}
+
+@keyframes loading-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Fondo con gradientes */
+.loading-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0, 50, 15, 0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 40%, rgba(0, 35, 10, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 25, 8, 0.5) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Centro */
+.loading-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Anillos */
+.loading-rings {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.ring-1 {
+  width: 120px;
+  height: 120px;
+  border-top-color: rgba(76, 175, 80, 0.6);
+  border-right-color: rgba(76, 175, 80, 0.1);
+  animation: ring-spin 2s linear infinite;
+}
+
+.ring-2 {
+  width: 88px;
+  height: 88px;
+  border-bottom-color: rgba(102, 187, 106, 0.5);
+  border-left-color: rgba(102, 187, 106, 0.1);
+  animation: ring-spin 3s linear infinite reverse;
+}
+
+.ring-3 {
+  width: 58px;
+  height: 58px;
+  border-top-color: rgba(129, 199, 132, 0.4);
+  border-right-color: rgba(129, 199, 132, 0.08);
+  animation: ring-spin 1.5s linear infinite;
+}
+
+@keyframes ring-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Núcleo central */
+.loading-core {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: core-pulse 2s ease-in-out infinite;
+}
+
+.loading-core-dot {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+}
+
+@keyframes core-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* Texto */
+.loading-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading-numero {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  color: var(--color-green-primary);
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.loading-titulo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-shadow: 0 0 20px rgba(165, 214, 167, 0.2);
+}
+
+/* Barra de progreso */
+.loading-bar-wrap {
+  width: 180px;
+  height: 1px;
+  background: rgba(56, 142, 60, 0.2);
+  border-radius: 1px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  border-radius: 1px;
+  animation: bar-fill 2.5s ease forwards;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes bar-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Partículas */
+.loading-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading-particle {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 2px;
+  background: #4caf50;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-rise linear infinite;
+}
+
+@keyframes particle-rise {
+  0%   { opacity: 0; transform: translateY(0) scale(1); }
+  20%  { opacity: 0.5; }
+  80%  { opacity: 0.2; }
+  100% { opacity: 0; transform: translateY(-100vh) scale(0.3); }
+}
+
+/* Fade out al salir */
+.loading-screen.hiding {
+  animation: loading-fade-out 0.5s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes loading-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes loading-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
