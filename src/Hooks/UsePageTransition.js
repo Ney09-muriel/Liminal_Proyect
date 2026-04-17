@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const usePageTransition = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
   const [isHiding, setIsHiding] = useState(false);
 
+  // Se ejecuta cada vez que cambia la ruta
   useEffect(() => {
     setIsLoading(true);
     setIsHiding(false);
@@ -22,7 +24,7 @@ const usePageTransition = () => {
       clearTimeout(hideTimer);
       clearTimeout(removeTimer);
     };
-  }, []);
+  }, [location.pathname]); // ← clave: se dispara con cada cambio de ruta
 
   const navigateWithTransition = (path) => {
     setIsLoading(true);
