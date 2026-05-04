@@ -2,11 +2,11 @@ import { useState } from "react";
 
 export const StatusGame = () => {
   const [gemas, setGemas] = useState(0);
-  const [vidas, setVidas] = useState(0)
+  const [vidas, setVidas] = useState(0);
 return (
     <>
     <div className="vidas">
-      <h1>Vidas: _____</h1>
+      <h1>❤️ Vidas: _____</h1>
       <button onClick={() => setVidas(prev => prev + 1)}>Vida 1</button>
       <button onClick={() => setVidas(prev => prev + 1)}>Vida 2</button>
       <button onClick={() => setVidas(prev => prev + 1)}>Vida 3</button>
