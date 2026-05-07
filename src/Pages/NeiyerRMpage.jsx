@@ -48,7 +48,7 @@ export function NeiyerRMpage() {
 
     return (
         <>
-            <h1> Personajes De Rick And Morty</h1>
+            <h1> Personajes De Rick And Morty.</h1>
             {character.map((char, index) => (
                 <div key={index} className="card" style={{ width: "18rem" }}>
                     <img src={char.image} className='card-img-top' alt="" />
