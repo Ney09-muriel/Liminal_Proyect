@@ -1,8 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import { chaptersData } from "./Chapters";
-import LoadingScreen from "../Components/LoadingScreen";
-import usePageTransition from "../Hooks/UsePageTransition";
 import "../Stylesheets/ChapterPlayer.css";
 
 const ChapterPlayer = () => {
@@ -17,7 +15,6 @@ const ChapterPlayer = () => {
   const [volume, setVolume] = useState(70);
   const [muted, setMuted] = useState(false);
   const [subsOn, setSubsOn] = useState(false);
-  const { isLoading, isHiding, navigateWithTransition } = usePageTransition();
 
   const currentIndex = chaptersData.findIndex((c) => c.id === parseInt(id));
   const chapter = chaptersData[currentIndex];
@@ -91,14 +88,6 @@ const ChapterPlayer = () => {
 
   return (
     <div className="player-page">
-
-      {isLoading && (
-        <LoadingScreen
-          numero={chapter.numero}
-          titulo={chapter.titulo}
-          isHiding={isHiding}
-        />
-      )}
 
       <nav className="player-nav">
         <span className="player-nav-logo" onClick={() => navigate("/")}>LIMINAL</span>
@@ -232,7 +221,7 @@ const ChapterPlayer = () => {
 
         <div className="player-chapter-nav">
           {prev ? (
-            <button className="player-nav-btn" onClick={() => navigateWithTransition(`/capitulo/${prev.id}`)}>
+            <button className="player-nav-btn" onClick={() => navigate(`/capitulo/${prev.id}`)}>
               <span className="player-nav-arrow">←</span>
               <div className="player-nav-info">
                 <span className="player-nav-label">Capítulo anterior</span>
@@ -246,7 +235,7 @@ const ChapterPlayer = () => {
           </span>
 
           {next ? (
-            <button className="player-nav-btn" onClick={() => navigateWithTransition(`/capitulo/${next.id}`)}>
+            <button className="player-nav-btn" onClick={() => navigate(`/capitulo/${next.id}`)}>
               <div className="player-nav-info right">
                 <span className="player-nav-label">Capítulo siguiente</span>
                 <span className="player-nav-title">{next.titulo}</span>
