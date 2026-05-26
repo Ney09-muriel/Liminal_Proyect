@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Pages/Header";
-import Home from "./Pages/Home";
+import LoadingPage from "./Pages/LoadingPage";
 import Chapters from "./Pages/Chapters";
 import Characters from "./Pages/Characters";
 import Synopsis from "./Pages/Synopsis";
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" element={
           <>
             <Header />
-            <Home />
+          <LoadingPage/>
             <Chapters />
             <Characters />
             <Synopsis />
