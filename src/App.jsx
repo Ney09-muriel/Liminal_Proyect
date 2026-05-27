@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Reproductor } from "./Components/Reproductor";
 import Header from "./Pages/Header";
 import LoadingPage from "./Pages/LoadingPage";
 import Chapters from "./Pages/Chapters";
@@ -15,12 +16,13 @@ function App() {
         {/* Página principal */}
         <Route path="/" element={
           <>
-            <Header />
+          <Reproductor/>
+            {/* <Header />
           <LoadingPage/>
             <Chapters />
             <Characters />
             <Synopsis />
-            <Footer />
+            <Footer /> */}
           </>
         } />
 
