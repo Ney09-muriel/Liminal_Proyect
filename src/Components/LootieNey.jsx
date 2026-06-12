@@ -1,11 +1,34 @@
-import Lottie from "lottie-react"
+import LottieModule from "lottie-react"
 import dataNey from "../assets/dataNey.json"
 
+const Lottie = LottieModule.default;
+
 export const LootieNey = () => {
+
+
+const LottieRef = useRef()
+
+const reproducir = () => {
+  LottieRef.current.stop()
+  LottieRef.current.play()
+  
+
+}
+
+
   return (
-    <div>
+    <div clasename ="pantalla">
+      <img className="fondo" src="./assets/animacionPolo/fondo.webp" alt="" />
+      
+
+
+
+
+
+
+
         <Lottie
-        animacionData={dataNey}
+        animationData={dataNey}
         loop={true}
         style={{width: 500, height: 500}}
         />
