@@ -7,7 +7,7 @@ import Characters from "./Pages/Characters";
 import Synopsis from "./Pages/Synopsis";
 import Footer from "./Pages/Footer";
 import ChapterPlayer from "./Pages/ChapterPlayer"; */
-import  {LootieNey}  from "./Components/LootieNey";
+import  {LottieNey}  from "./Components/LottieNey";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
             <Characters />
             <Synopsis />
             <Footer /> */}
-            <LootieNey/>
+            <LottieNey/>
           </>
         } />
 
