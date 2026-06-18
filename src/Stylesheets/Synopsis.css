@@ -1,6 +1,12 @@
 .synopsis-section {
   background-color: var(--color-bg-dark);
   padding: 80px 0;
+  
+}
+.overflow1{
+height: 400px;
+overflow-y: scroll;
+
 }
 
 .synopsis-title {

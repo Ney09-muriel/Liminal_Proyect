@@ -9,7 +9,7 @@ const Synopsis = () => {
           <div className="col-12 col-md-4 text-center">
             <img src="/OfeliaFull.png" alt="Ofelia" className="synopsis-img" />
           </div>
-          <div className="col-12 col-md-8">
+          <div className="overflow1 col-12 col-md-8">
             <h4 className="synopsis-subtitle">PRÓLOGO</h4>
             <p className="synopsis-text">
               En una época marcada por la oscuridad y el miedo, donde la guerra ha dejado cicatrices en el alma de los hombres, existe un mundo oculto más allá de lo que los ojos pueden ver. Un lugar donde la realidad se confunde con la fantasía, y los sueños abren portales hacia verdades olvidadas.
