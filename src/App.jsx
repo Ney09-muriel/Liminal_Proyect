@@ -1,13 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Reproductor } from "./Components/Reproductor";
-/* import Header from "./Pages/Header";
+import Header from "./Pages/Header";
 import LoadingPage from "./Pages/LoadingPage";
 import Chapters from "./Pages/Chapters";
 import Characters from "./Pages/Characters";
 import Synopsis from "./Pages/Synopsis";
 import Footer from "./Pages/Footer";
-import ChapterPlayer from "./Pages/ChapterPlayer"; */
-import  {LottieNey}  from "./Components/LottieNey";
+import ChapterPlayer from "./Pages/ChapterPlayer"; 
+
 
 function App() {
   return (
@@ -17,19 +16,18 @@ function App() {
         {/* Página principal */}
         <Route path="/" element={
           <>
-          {/* <Reproductor/> */}
-            {/* <Header />
+          <Header />
           <LoadingPage/>
             <Chapters />
             <Characters />
             <Synopsis />
-            <Footer /> */}
-            <LottieNey/>
+            <Footer /> 
+            
           </>
         } />
 
         {/* Página de cada capítulo */}
-       {/*  <Route path="/capitulo/:id" element={<ChapterPlayer />} /> */}
+        <Route path="/capitulo/:id" element={<ChapterPlayer />} /> 
 
       </Routes>
     </BrowserRouter>
