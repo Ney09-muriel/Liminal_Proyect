@@ -34,6 +34,7 @@ export default function App() {
           style={{ y: titleY, opacity: titleOpacity }}
         >
           <h1 className="hero-title">LIMINAL</h1>
+          <h3 className="hero-description">El Limite Entre La Realidad Y La Fantasia</h3>
         </motion.div>
       </section>
     </main>

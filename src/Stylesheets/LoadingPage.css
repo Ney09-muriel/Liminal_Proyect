@@ -56,13 +56,24 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(5rem, 14vw, 12rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 300;
   letter-spacing: 0.25em;
   color: #fff;
   line-height: 1;
   text-transform: uppercase;
+  text-shadow: 0 0 20px #fff; 
+  
 }
+
+.hero-description {
+   font-size: clamp(1.2rem, 2vw, 2rem); /* Bajamos el tamaño mínimo, el escalado y el máximo */
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2; /* Subimos un poco para que no se encime si se divide en dos líneas */
+  text-shadow: 0 0 20px #fff; 
+}
+
 
 /* ── Siguiente sección (personaliza a tu gusto) ───── */
 .next-section {
