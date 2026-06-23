@@ -1,8 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import { chaptersData } from "./Chapters";
-import LoadingScreen from "../Components/LoadingScreen";
-import usePageTransition from "../Hooks/UsePageTransition";
 import "../Stylesheets/ChapterPlayer.css";
 
 const ChapterPlayer = () => {
@@ -17,7 +15,6 @@ const ChapterPlayer = () => {
   const [volume, setVolume] = useState(70);
   const [muted, setMuted] = useState(false);
   const [subsOn, setSubsOn] = useState(false);
-  const { isLoading, isHiding, navigateWithTransition } = usePageTransition();
 
   const currentIndex = chaptersData.findIndex((c) => c.id === parseInt(id));
   const chapter = chaptersData[currentIndex];
@@ -92,14 +89,6 @@ const ChapterPlayer = () => {
   return (
     <div className="player-page">
 
-      {isLoading && (
-        <LoadingScreen
-          numero={chapter.numero}
-          titulo={chapter.titulo}
-          isHiding={isHiding}
-        />
-      )}
-
       <nav className="player-nav">
         <span className="player-nav-logo" onClick={() => navigate("/")}>LIMINAL</span>
         <div className="player-nav-links">
@@ -160,16 +149,14 @@ const ChapterPlayer = () => {
                     <rect x="9" y="2" width="4" height="12" rx="1" fill="#81c784" />
                   </svg>
                 ) : (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <polygon points="3,1 14,8 3,15" fill="#81c784" />
-                  </svg>
+                  <i class="bi bi-play-fill"></i>
                 )}
               </button>
 
               <button className="player-ctrl-btn" onClick={restart} title="Reiniciar">
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                  <path d="M2 7.5A5.5 5.5 0 1 1 7.5 13" stroke="#81c784" strokeWidth="1.4" strokeLinecap="round" />
-                  <polyline points="1,4.5 2,7.5 5,6.5" stroke="#81c784" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16" fill="#81c784">
+                  <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z" />
+                  <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466" />
                 </svg>
               </button>
 
@@ -232,7 +219,7 @@ const ChapterPlayer = () => {
 
         <div className="player-chapter-nav">
           {prev ? (
-            <button className="player-nav-btn" onClick={() => navigateWithTransition(`/capitulo/${prev.id}`)}>
+            <button className="player-nav-btn" onClick={() => navigate(`/capitulo/${prev.id}`)}>
               <span className="player-nav-arrow">←</span>
               <div className="player-nav-info">
                 <span className="player-nav-label">Capítulo anterior</span>
@@ -246,7 +233,7 @@ const ChapterPlayer = () => {
           </span>
 
           {next ? (
-            <button className="player-nav-btn" onClick={() => navigateWithTransition(`/capitulo/${next.id}`)}>
+            <button className="player-nav-btn" onClick={() => navigate(`/capitulo/${next.id}`)}>
               <div className="player-nav-info right">
                 <span className="player-nav-label">Capítulo siguiente</span>
                 <span className="player-nav-title">{next.titulo}</span>

@@ -1,6 +1,12 @@
 .synopsis-section {
   background-color: var(--color-bg-dark);
   padding: 80px 0;
+  
+}
+.overflow1{
+height: 400px;
+overflow-y: scroll;
+
 }
 
 .synopsis-title {
@@ -12,7 +18,7 @@
   letter-spacing: 8px;
   text-transform: uppercase;
   margin-bottom: 50px;
-  text-shadow: 0 0 20px rgba(165, 214, 167, 0.15);
+  text-shadow: 0 0 20px #a5d6a7; 
 }
 
 .synopsis-subtitle {
