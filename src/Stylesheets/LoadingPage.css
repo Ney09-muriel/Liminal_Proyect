@@ -13,13 +13,35 @@ body {
 
 /* ── Hero ─────────────────────────────────────────── */
 .hero {
-  position: relative;
+  position: relative; /* OBLIGATORIO: Mantiene el degradado dentro de la sección */
   height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* NUEVA CAPA DE DEGRADADO: Se posiciona en la base del hero */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px; /* Controla la altura del difuminado. Súbelo si quieres que empiece más arriba */
+  z-index: 2;    /* Lo coloca encima de la imagen (.hero-bg) pero detrás del texto (.hero-content) */
+  
+  /* DEGRADADO: Va desde transparente absoluto hasta el verde de tu siguiente sección */
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 12, 6, 0) 0%,      /* Transparente total arriba */
+    rgba(4, 12, 6, 0.7) 60%,   /* Empieza a oscurecer en verde */
+    rgba(4, 12, 6, 1) 100%     /* Verde sólido abajo para conectar perfecto */
+  );
+  
+  pointer-events: none; /* Asegura que se pueda hacer click a través de él sin problemas */
+}
+
 
 .hero-bg {
   position: absolute;
@@ -42,7 +64,7 @@ body {
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.2) 0%,
-    rgba(0,0,0,0.5) 100%
+    var(--color-bg-dark) 100%
   );
   pointer-events: none;
 }

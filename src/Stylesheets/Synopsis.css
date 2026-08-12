@@ -3,11 +3,36 @@
   padding: 80px 0;
   
 }
-.overflow1{
-height: 400px;
-overflow-y: scroll;
 
+
+/* 1. Limpiamos tu clase base */
+.overflow1 {
+  height: 400px;
+  overflow-y: auto; /* Cambiado a auto para que solo salga si el texto se pasa de 400px */
 }
+
+/* 2. OBLIGATORIO: Declarar el contenedor del scroll en Chrome para activar los estilos */
+.overflow1::-webkit-scrollbar {
+  width: 8px; /* Aquí controlas el grosor de la barra */
+}
+
+/* 3. CORRECCIÓN DEL ERROR: Ocultar las flechas por completo */
+.overflow1::-webkit-scrollbar-button {
+  display: none !important;
+}
+
+/* 4. El fondo del canal (Riel) con tu color verde oscuro */
+.overflow1::-webkit-scrollbar-track {
+  background-color: #040c06;
+}
+
+/* 5. La barra que se mueve (Manija) en color negro */
+.overflow1::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 4px;
+}
+
+
 
 .synopsis-title {
   font-family: var(--font-display);

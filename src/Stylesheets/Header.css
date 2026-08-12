@@ -1,11 +1,17 @@
-.liminal-navbar {
-  background-color: rgba(6, 14, 10, 0.92);
-  border-bottom: 1px solid rgba(76, 175, 80, 0.35);
-  padding: 14px 0;
-  margin-top: 10px;
-  border-radius: 10px;
-  backdrop-filter: blur(8px);
+.liminal-navbar { 
+  background-color: rgba(6, 14, 10, 0.92); 
+  border: 1px solid rgba(76, 175, 80, 0.35); /* Cambiado de border-bottom a border completo para que cierre la cápsula */
+  padding: 14px 24px; /* Añadí espacio a los lados para que el texto no toque los bordes redondos */
+  
+  /* EFECTO FLOTANTE */
+  width: 100%;            /* Ocupa el 90% de la pantalla, dejando aire a los lados */
+  max-width: 1200px;     /* Evita que se estire demasiado en pantallas gigantes */
+  margin: 20px auto 0 auto; /* 20px de espacio arriba para que flote, y 'auto' lo centra */
+  border-radius: 50px;   /* Bordes completamente redondos estilo cápsula */
+  
+  backdrop-filter: blur(8px); 
 }
+
 
 .liminal-logo {
   font-family: var(--font-display) !important;
